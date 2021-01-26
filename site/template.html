@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+    <link rel="manifest" href="./site.webmanifest">
+    <link rel="stylesheet" type="text/css" href="./template.css">
+    <title>Stuff I Just Found Out</title>
+    <!-- Loading mathjax macro -->
+    <!-- Load mathjax -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_HTML"></script>
+    <!-- MathJax configuration -->
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        // Center justify equations in code and markdown cells. Elsewhere
+        // we use CSS to left justify single line equations in code cells.
+        displayAlign: 'center',
+        "HTML-CSS": {
+            styles: {'.MathJax_Display': {"margin": 0}},
+            linebreaks: { automatic: true }
+        }
+    });
+    </script>
+</head>
+<body>
+<div class="panel-background">
+<div class="panel-left"></div>
+<div class="panel-main">
+
+    <div class="header">
+        <h1 id="title">Stuff I Just Found Out</h1>
+        <p id="subtitle">A science blog with all of the difficult maths put back in.</p>
+    </div> 
+    <!-- Top navigation -->
+    <div class="topnav">
+
+        <!-- Centered link -->
+        <div class="topnav-centered"><div>
+        <a href="#home">Home</a>
+        <a href="#news">Recent</a>
+        <a href="#contact">Contact</a>
+        <a href="#search">Search</a>
+        <a href="#about">About</a></div>
+        </div>
+    
+    
+        <!-- Right-aligned links -->
+        <div class="topnav-right">
+            <a href=""></a>
+
+        </div>
+    
+    </div> 
+    
+    <div class="content">
+          <div tabindex="-1" id="notebook" class="border-box-sizing">
+          <div class="container" id="notebook-container">
+          <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+          </div><div class="inner_cell">
+          <div class="text_cell_render border-box-sizing rendered_html">
+          <h2 id="Systems-Biology-Lecture-1">Systems Biology Lecture 1<a class="anchor-link" href="#Systems-Biology-Lecture-1">&#182;</a></h2>
+          </div>
+          </div>
+          </div>
+          <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+          </div><div class="inner_cell">
+          <div class="text_cell_render border-box-sizing rendered_html">
+          <h3 id="Topics">Topics<a class="anchor-link" href="#Topics">&#182;</a></h3><ul>
+          <li>Michaelis-Menten kinetics</li>
+          <li>Activator-inhibitor curve</li>
+          <li>Input function</li>
+          <li>Coorperativity</li>
+          </ul>
+          
+          </div>
+          </div>
+          </div>
+          <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+          </div><div class="inner_cell">
+          <div class="text_cell_render border-box-sizing rendered_html">
+          <h3 id="Michaelis-Mentens-Equation">Michaelis-Mentens Equation<a class="anchor-link" href="#Michaelis-Mentens-Equation">&#182;</a></h3><p>Chemists will use [X] for concentration of X. This is very boring so we'll skip this and you can tell from context whether X is refering to X itself or the conc. of X.</p>
+          <p>A prototypical chemical equation for an enzyme catalysing the conversation of a substrate into a product is given by:</p>
+          $$ E + S \leftrightharpoons ES \leftrightharpoons E + P $$<p>Here, these reactions have forward and backward equilibrium constants given by:</p>
+          <ul>
+          <li>$ E + S \rightarrow ES $ with rate constant $k_f$</li>
+          <li>$ ES \rightarrow E + S $ with rate constant $k_r$</li>
+          <li>$ ES \rightarrow E + P $ with rate constant $k_{cat}$</li>
+          </ul>
+          <p>This means we can set up a bunch of differential equations:</p>
+          <ul>
+          <li><p>$ \frac{d(ES)}{dt} = k_f \times E \times S $</p>
+          </li>
+          <li><p>$ \frac{dE}{dt} = k_r \times (ES) $</p>
+          </li>
+          <li><p>$ \frac{dS}{dt} = (k_r + k_{cat}) \times (ES) $</p>
+          </li>
+          <li><p>$ \frac{dP}{dt} = k_{cat} \times (ES) $</p>
+          </li>
+          </ul>
+          <p>Here, (ES) stands for the (concentration of) enzyme-substrate complex - not the product E times S.</p>
+          
+          </div>
+          </div>
+          </div>
+          <div class="cell border-box-sizing code_cell rendered">
+          <div class="input">
+          <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+          <div class="inner_cell">
+              <div class="input_area">
+          <div class=" highlight hl-ipython3"><pre><span></span> 
+          </pre></div>
+          
+              </div>
+          </div>
+          </div>
+          
+          </div>
+          </div>
+          </div>
+
+    </div>
+</div>
+<div class="panel-right"></div>
+</div>
+</body>
+</html> 
