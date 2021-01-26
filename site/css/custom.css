@@ -1,0 +1,168 @@
+/* My CSS */
+/*html {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', Verdana, sans-serif;
+}*/
+
+body {
+    background-image: url('../img/wm-processed1.jpg');
+    background-attachment: fixed;
+    padding: 0px; 
+    margin: 0px;
+    border: 0px;
+    height: 100%;
+}
+
+
+/* --- Header --- */
+
+.header {
+    padding: 60px;
+    text-align: center;
+    background: #ffffff;
+    color: black;
+    font-size: 30px;
+    opacity: 1;
+}
+
+#title {
+  font-weight: bold;
+  font-size: 50px;
+}
+
+
+/* --- panel area --- */
+
+.panel-background {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+}
+
+.panel-left {
+  background-color: #ffffff;
+  opacity: 0;
+  flex: 10%; /* Set the width of the transparency */
+  padding: 0px; 
+  margin: 0px;
+  border: 0px;
+}
+
+.panel-main {
+    flex: 60%;
+    background-color: #ffffff;
+    padding: 0px; 
+    margin: 0px;
+    border: 0px;
+    height: 100%;
+}
+
+.panel-right {
+    background-color: #ffffff;
+    opacity: 0;
+    flex: 10%; /* Set the width of the transparency */
+    padding: 0px; 
+    margin: 0px;
+    border: 0px;
+}
+
+
+/* --- Navbar --- */
+
+/* Add a black background color to the top navigation */
+.topnav {
+  position: relative;
+  background-color: #ffffff;
+  color: black;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;
+  font-size: 17px;
+  color: black;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  text-decoration: underline;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  text-decoration: underline;
+  color: black;
+}
+
+/* Centered section inside the top navigation */
+.topnav-centered div {
+  float: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: black;
+}
+
+/* Right-aligned section inside the top navigation */
+.topnav-right {
+  float: right;
+  color: black;
+}
+
+/* Responsive navigation menu - display links on top of each other instead of next to each other (for mobile devices) */
+@media screen and (max-width: 600px) {
+  .topnav a, .topnav-right {
+    float: none;
+    display: block;
+    color: black;
+  }
+
+  .topnav-centered a {
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
+    color: black;
+  }
+}
+
+
+/*
+
+.topnav {
+    background-color: #efefef;
+    overflow: hidden;
+    font-size: 16;
+    text-align: center;
+}
+
+/* Style the links inside the navigation bar *//*
+.topnav a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  text-decoration: underline;;
+}
+
+/* Add a underline to the currently active link *//*
+.topnav a.active {
+  text-underline-position: below;
+}
+*/
+
+.content {
+  border:10px;
+  margin:10px;
+  padding: 0px;
+}

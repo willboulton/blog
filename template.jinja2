@@ -1,0 +1,108 @@
+{%- extends 'basic.tpl' -%}
+{% from 'mathjax.tpl' import mathjax %}
+
+
+{%- block header -%}
+<!DOCTYPE html>
+<html>
+<head>
+{%- block html_head -%}
+<meta charset="utf-8" />
+<link rel="apple-touch-icon" sizes="180x180" href="../img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16x16.png">
+<link rel="manifest" href="../img/site.webmanifest">
+<title>Stuff I Just Found Out</title>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+{% block ipywidgets %}
+{%- if "widgets" in nb.metadata -%}
+<script>
+(function() {
+  function addWidgetsRenderer() {
+    var mimeElement = document.querySelector('script[type="application/vnd.jupyter.widget-view+json"]');
+    var scriptElement = document.createElement('script');
+    var widgetRendererSrc = '{{ resources.ipywidgets_base_url }}@jupyter-widgets/html-manager@*/dist/embed-amd.js';
+    var widgetState;
+
+    // Fallback for older version:
+    try {
+      widgetState = mimeElement && JSON.parse(mimeElement.innerHTML);
+
+      if (widgetState && (widgetState.version_major < 2 || !widgetState.version_major)) {
+        widgetRendererSrc = '{{ resources.ipywidgets_base_url }}jupyter-js-widgets@*/dist/embed.js';
+      }
+    } catch(e) {}
+
+    scriptElement.src = widgetRendererSrc;
+    document.body.appendChild(scriptElement);
+  }
+
+  document.addEventListener('DOMContentLoaded', addWidgetsRenderer);
+}());
+</script>
+{%- endif -%}
+{% endblock ipywidgets %}
+
+
+
+<!-- Custom stylesheet, it must be in the same directory as the html file -->
+<link rel="stylesheet" href="../css/notebook_preset.css">
+<link rel="stylesheet" href="../css/custom.css">
+
+<!-- Loading mathjax macro -->
+{{ mathjax() }}
+{%- endblock html_head -%}
+</head>
+{%- endblock header -%}
+
+{% block body %}
+<body>
+<div class="panel-background">
+<div class="panel-left"></div>
+<div class="panel-main">
+
+    <div class="header">
+        <h1 id="title">Stuff I Just Found Out</h1>
+        <p id="subtitle">A science blog with all of the difficult maths put back in.</p>
+    </div> 
+    <!-- Top navigation -->
+    <div class="topnav">
+
+        <!-- Centered link -->
+        <div class="topnav-centered"><div>
+        <a href="#home">Home</a>
+        <a href="#news">Recent</a>
+        <a href="#contact">Contact</a>
+        <a href="#search">Search</a>
+        <a href="#about">About</a></div>
+        </div>
+    
+    
+        <!-- Right-aligned links -->
+        <div class="topnav-right">
+            <a href=""></a>
+
+        </div>
+    
+    </div> 
+    
+    <div class="content">
+    <div tabindex="-1" id="notebook" class="border-box-sizing">
+    <div class="container" id="notebook-container">
+        {{ super() }}
+    </div>
+  </div>
+    </div>
+</div>
+<div class="panel-right"></div>
+</div>
+</body>
+{%- endblock body %}
+
+{% block footer %}
+{{ super() }}
+</html>
+{% endblock footer %}
