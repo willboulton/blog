@@ -56,9 +56,9 @@
 {{ mathjax() }}
 {%- endblock html_head -%}
 </head>
-{%- endblock header -%}
 
-{% block body %}
+
+{# block body #}
 <body>
 <div class="panel-background">
 <div class="panel-left"></div>
@@ -88,19 +88,25 @@
     </div> 
     
     <div class="content">
+{# endblock body #}
+{%- endblock header -%}
+
+{% block any_cell %}
     <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
         {{ super() }}
     </div>
     </div>
-    </div>
+    <br/> <br/>
+{% endblock any_cell %}
+
+
+{% block footer %}
+</div>
 </div>
 <div class="panel-right"></div>
 </div>
 </body>
-{%- endblock body %}
-
-{% block footer %}
 {{ super() }}
 </html>
 {% endblock footer %}

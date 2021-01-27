@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8" />
+<link rel="apple-touch-icon" sizes="180x180" href="../img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16x16.png">
+<link rel="manifest" href="../img/site.webmanifest">
+<title>Stuff I Just Found Out</title>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+
+
+
+<!-- Custom stylesheet, it must be in the same directory as the html file -->
+<link rel="stylesheet" href="../css/notebook_preset.css">
+<link rel="stylesheet" href="../css/custom.css">
+
+<!-- Loading mathjax macro -->
+<!-- Load mathjax -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_HTML"></script>
+    <!-- MathJax configuration -->
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        // Center justify equations in code and markdown cells. Elsewhere
+        // we use CSS to left justify single line equations in code cells.
+        displayAlign: 'center',
+        "HTML-CSS": {
+            styles: {'.MathJax_Display': {"margin": 0}},
+            linebreaks: { automatic: true }
+        }
+    });
+    </script>
+    <!-- End of mathjax configuration --></head>
+<body>
+<div class="panel-background">
+<div class="panel-left"></div>
+<div class="panel-main">
+
+    <div class="header">
+        <h1 id="title">Stuff I Just Found Out</h1>
+        <p id="subtitle">A science blog with all of the difficult maths put back in.</p>
+    </div> 
+    <!-- Top navigation -->
+    <div class="topnav">
+
+        <!-- Centered link -->
+        <div class="topnav-centered"><div>
+        <a href="./index.html">Home</a>
+        <a href="./about.html">About</a>
+        <a href="./topics.html">Topics</a>
+        <a href="./bookmarks.html">Bookmarks</a></div>
+        </div>
+    
+    
+        <!-- Right-aligned links -->
+        <div class="topnav-right">
+        <a href=""></a>
+        </div>
+    
+    </div> 
+    
+    <div class="content">
+    <div tabindex="-1" id="notebook" class="border-box-sizing">
+    <div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Coalgebra-Lecture-1"><strong>Coalgebra Lecture 1</strong><a class="anchor-link" href="#Coalgebra-Lecture-1">&#182;</a></h2><h3 id="Who-are-these-notes-for?"><strong>Who are these notes for?</strong><a class="anchor-link" href="#Who-are-these-notes-for?">&#182;</a></h3><p>This is a set of notes about coalgebra, intended mainly for mathematicians, and mainly those that might be working with coalgebras. Therefore this set of notes has a pretty small audience. However, there are also examples of coalgebras used in Computer Science, and I'll try to add a few of these where relevant. A lot of examples here rely on category theory. I am not great at category theory, so if you spot any mistakes then please let me know. In the first few notes I've tried not to make category theory a prerequisite for understanding coalgebra, but in the later sections about measuring coalgebras, there is a lot reliance on ideas from category theory, which are unavoidable.</p>
+<p>A lot of these notes are from Sweedler - Hopf Algebras.</p>
+<h3 id="What-is-Coalgebra?"><strong>What is Coalgebra?</strong><a class="anchor-link" href="#What-is-Coalgebra?">&#182;</a></h3><p>Coalgebra is, in a certain sense, the opposite of algebra. At a general level, in mathematics, algebras are vector spaces with an associative multiplication, and an element $1$ that acts like a unit. The canonical example would be the set of all matrices (over some field). In computer science, algebras are even more general structures that have some kind of composition rule from a composed set to a base set, satisfying properties similar to assiciativity and unity - an example might be string concatenation. (This definition already starts using monadic functors, and I'm trying to avoid too much category theory, so the vague definition stated will have to do.)</p>
+<p>Here is the formal definition for mathematicians:</p>
+<p><strong>Definition:</strong> A coalgebra $C$ is a vector space over a field $k$ with operations $\Delta$ (called comultiplication) and $\epsilon$ (called the counit) such that:</p>
+<ol>
+<li>$$\Delta : C \rightarrow C \otimes C$$ satisfies this diagram (coassociativity).</li>
+<li>$$ \epsilon : C \rightarrow k$$ satisfies this diagram (counit rule). </li>
+</ol>
+<p>For mathematicians, there are certain structures that they are bound to have come across all the time which are coalgebraic. Here are some examples:</p>
+<ol>
+<li>Homomorphisms/ group representations/ structure preserving maps. In these cases $\Delta g = g \otimes g$, $\epsilon (g) = 1$. In cases like this we say that $g$ is a <em>group-like</em> element.</li>
+<li>Derivations - where $\Delta d = 1 \otimes d + d \otimes 1$. Here, $1$ is a group-like element. </li>
+<li>Addition formulae: we can define $s$ and $c$, with properties such that $\Delta s = s \otimes c + c \otimes s$ and $\Delta c = c \otimes c - s \otimes s$. $\epsilon (s) = 0, \epsilon (c) = 1$.</li>
+<li>Graphs - <em>find the graph example when you have internet!</em></li>
+<li>Quantum groups, including the <em>something something equation</em>.</li>
+<li>Card shuffling and permutations - if you can find the paper!</li>
+<li>A Marj example - Lie Algebras? </li>
+<li>Group representations!</li>
+</ol>
+<p>For computer scientists, a coalgebra is more general (and sadly, category heavy) object, and is usually called a $F$-coalgebra, where $F$ is a functor. The definition is this:</p>
+<ol>
+<li>A coalgebra is a natural transformation $c : C \rightarrow FC$ satisfying...</li>
+</ol>
+<p>The mathematician's coalgebra is a special case of the c.s. coalgebra, where $F$ is the tensor product, $\otimes : C \rightarrow C \otimes C$, over a vector space $k$. 
+Here are a few examples that computer scientists care about:</p>
+<ol>
+<li>Streams</li>
+<li>Pushdown automata (PDA), finite state machines (FSMs), and context free grammars (CFGs). </li>
+<li>Structural Operator Semantics (?) and possibly even Linear Operator Semantics as the obvious lifting of this over $\mathbb{R}$. </li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Relation-to-algebra"><strong>Relation to algebra</strong><a class="anchor-link" href="#Relation-to-algebra">&#182;</a></h3><p>The first thing to notice is that coalgebra is just algebra with all the arrows reversed. Algebras cover all sorts of familiar objects, e.g. polynomials, matrices, the complex and real numbers, quarternions, function spaces... all are algebras. In computer science, ...... are examples of algebras.</p>
+<p>However, there are differences.</p>
+<ol>
+<li>Dualising algebras doesn't work (except in finite dimensions), but dualising coalgebras does work. </li>
+<li>Any element of a coalgebra lives in a finite dimensional subcoalgebra. </li>
+</ol>
+<p>This second statement is important enough to be called <strong>the fundamental theorem of coalgebra</strong>, and we will formalise it later. (To see how great this is, compare it to the case of the polynomial algebra, where $X \in \mathbb{C}[X]$ generates $X, X^2, X^3, ...$ so cannot ever be contained in a finite dimensional subalgebra.)</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Duals"><strong>Duals</strong><a class="anchor-link" href="#Duals">&#182;</a></h3><p>In this section we are going to define a useful operator, called $^\circ: Alg \rightarrow Coalg$. I.e., this operation takes an algebra and generates a coalgebra. The operator is the <em>cofinite dual</em>.</p>
+<p><strong>Definion:</strong> The cofinite dual of an algebra $A$ is a coalgebra $A^\circ$, defined as:...</p>
+<p>Some examples: ...</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Coalgebra-as-an-extension-of-homomorphims,-and-measuring"><strong>Coalgebra as an extension of homomorphims, and measuring</strong><a class="anchor-link" href="#Coalgebra-as-an-extension-of-homomorphims,-and-measuring">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    </div>
+    </div>
+    </div>
+</div>
+<div class="panel-right"></div>
+</div>
+</body>
+
+ 
+
+
+</html>

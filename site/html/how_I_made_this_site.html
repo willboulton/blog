@@ -75,47 +75,15 @@
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><h1>About Me</h1></p>
-<p>
-My name is Will Boulton and I am a software engineer and mathematician. 
-I finished my BA and MMath at the University of Cambridge in 2016. Since then 
-I have been working as a software engineer, as well as doing mathematical modelling and data science type
-things. 
-<br/>
-<br/>
-This website is a huge mish-mash of topics I am interested in as well as a place for my to collect together various 
-articles I am reading, or want to read. Occasionally there might be some useful information for my maths students. 
-I will put stuff on this website that I'm excited to find out more about, and mainly hope that this website can be used
-to help other students in a similar situation. 
-<br/>
-<br/>
-The sort of areas I am interested in include:
-<ul>
-    <li>molecular biology, genomics, biochemistry, and molecular dynamics</li>
-    <li>applied mathematics, particularly in life science</li>
-    <li>bioinformatics and computational biology</li>
-    <li>machine learning and data science</li>
-    <li>applied category theory, and category theory in computer science</li>
-    <li>coalgebra</li>
-    <li>recreational mathematics</li>
-    <li>programming, mainly in Python</li>
-    <li>computer science</li>
-</ul>
-Each of these are massive areas!
-<br/>
-<br/>
-As a software engineer I mainly program in Python and Java, though I have occasionally played around with 
-Javascript, C and C++. I have some interest in Haskell, due to its connection to category theory, which I've remained interested in
-since university. 
-<br/>
-<br/>
-You can contact me at <a href=mailto:wboulton12@gmail.com>wboulton12@gmail.com</a> if you like, 
-and if you spot any mistakes in this website and want to tell me then I will be very grateful. 
-Please email me if you want a copy of my CV for some reason. 
-My github is pretty empty, but you can find it <a href=https://github.com/willboulton>here</a>. 
-I rarely use Twitter, Facebook, or Instagram 
-(because they are stupid) so don't bother trying to contact me on any of those. 
-</p>
+<h1 id="How-I-Made-this-Site">How I Made this Site<a class="anchor-link" href="#How-I-Made-this-Site">&#182;</a></h1><p>This site looks a lot like a Jupyter notebook because it is a Jupyter notebook. It is a static site, and all I've done is run this command:</p>
+<div class="highlight"><pre><span></span>jupyter nbconvert --to html &lt;blog entry&gt; --output-dir &lt;static folder&gt; --template &lt;custom template&gt;
+</pre></div>
+<p>Then I've added some custom css and a header.</p>
+<p>The annoying bit is this custom template, but you can mainly just copy the existing jinja2 template that Jupyter uses. Also don't ask about the 13000+ horrifying lines of Jupyter notebook css - I hate it, but am not sure which bits can be done away with.</p>
+<p>There's also an sqlite3 database to keep track of some of the posts and list them.</p>
+<p>There are plenty of other ways to make a site like this (probably better ways); I've decided to do it this way because a lot of people are pretty familiar with Jupyter notebooks, and it also means that I get a WYSIWYG interface when I'm writing a post. I think if you are very keen you can make a Jupyter book, or turn notebooks into pages with Voila or something. I haven't bothered with this - mainly because if in the future I want to do a one off post in a completely different way for some reason, I won't then be tied in to having to figure out how to do that within the framework of one of those tools. Also basically everywhere lets you host a static website for free which is great.</p>
+<p>The code is on github if you are keen to do the same yourself - it is extremely easy.</p>
+
 </div>
 </div>
 </div>
