@@ -1,15 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8"/>
-    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
-    <link rel="manifest" href="./site.webmanifest">
-    <link rel="stylesheet" type="text/css" href="./template.css">
-    <title>Stuff I Just Found Out</title>
-    <!-- Loading mathjax macro -->
-    <!-- Load mathjax -->
+<html>
+<head><meta charset="utf-8" />
+<link rel="apple-touch-icon" sizes="180x180" href="../img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16x16.png">
+<link rel="manifest" href="../img/site.webmanifest">
+<title>Stuff I Just Found Out</title>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+
+
+
+<!-- Custom stylesheet, it must be in the same directory as the html file -->
+<link rel="stylesheet" href="../css/notebook_preset.css">
+<link rel="stylesheet" href="../css/custom.css">
+
+<!-- Loading mathjax macro -->
+<!-- Load mathjax -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_HTML"></script>
     <!-- MathJax configuration -->
     <script type="text/x-mathjax-config">
@@ -29,7 +39,7 @@
         }
     });
     </script>
-</head>
+    <!-- End of mathjax configuration --></head>
 <body>
 <div class="panel-background">
 <div class="panel-left"></div>
@@ -44,11 +54,10 @@
 
         <!-- Centered link -->
         <div class="topnav-centered"><div>
-        <a href="#home">Home</a>
-        <a href="#news">Recent</a>
-        <a href="#contact">Contact</a>
-        <a href="#search">Search</a>
-        <a href="#about">About</a></div>
+        <a href="./index.html">Home</a>
+        <a href="./about.html">About</a>
+        <a href="#topics">Topics</a>
+        <a href="#bookmarks">Bookmarks</a></div>
         </div>
     
     
@@ -61,74 +70,54 @@
     </div> 
     
     <div class="content">
-          <div tabindex="-1" id="notebook" class="border-box-sizing">
-          <div class="container" id="notebook-container">
-          <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-          </div><div class="inner_cell">
-          <div class="text_cell_render border-box-sizing rendered_html">
-          <h2 id="Systems-Biology-Lecture-1">Systems Biology Lecture 1<a class="anchor-link" href="#Systems-Biology-Lecture-1">&#182;</a></h2>
-          </div>
-          </div>
-          </div>
-          <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-          </div><div class="inner_cell">
-          <div class="text_cell_render border-box-sizing rendered_html">
-          <h3 id="Topics">Topics<a class="anchor-link" href="#Topics">&#182;</a></h3><ul>
-          <li>Michaelis-Menten kinetics</li>
-          <li>Activator-inhibitor curve</li>
-          <li>Input function</li>
-          <li>Coorperativity</li>
-          </ul>
-          
-          </div>
-          </div>
-          </div>
-          <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-          </div><div class="inner_cell">
-          <div class="text_cell_render border-box-sizing rendered_html">
-          <h3 id="Michaelis-Mentens-Equation">Michaelis-Mentens Equation<a class="anchor-link" href="#Michaelis-Mentens-Equation">&#182;</a></h3><p>Chemists will use [X] for concentration of X. This is very boring so we'll skip this and you can tell from context whether X is refering to X itself or the conc. of X.</p>
-          <p>A prototypical chemical equation for an enzyme catalysing the conversation of a substrate into a product is given by:</p>
-          $$ E + S \leftrightharpoons ES \leftrightharpoons E + P $$<p>Here, these reactions have forward and backward equilibrium constants given by:</p>
-          <ul>
-          <li>$ E + S \rightarrow ES $ with rate constant $k_f$</li>
-          <li>$ ES \rightarrow E + S $ with rate constant $k_r$</li>
-          <li>$ ES \rightarrow E + P $ with rate constant $k_{cat}$</li>
-          </ul>
-          <p>This means we can set up a bunch of differential equations:</p>
-          <ul>
-          <li><p>$ \frac{d(ES)}{dt} = k_f \times E \times S $</p>
-          </li>
-          <li><p>$ \frac{dE}{dt} = k_r \times (ES) $</p>
-          </li>
-          <li><p>$ \frac{dS}{dt} = (k_r + k_{cat}) \times (ES) $</p>
-          </li>
-          <li><p>$ \frac{dP}{dt} = k_{cat} \times (ES) $</p>
-          </li>
-          </ul>
-          <p>Here, (ES) stands for the (concentration of) enzyme-substrate complex - not the product E times S.</p>
-          
-          </div>
-          </div>
-          </div>
-          <div class="cell border-box-sizing code_cell rendered">
-          <div class="input">
-          <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-          <div class="inner_cell">
-              <div class="input_area">
-          <div class=" highlight hl-ipython3"><pre><span></span> 
-          </pre></div>
-          
-              </div>
-          </div>
-          </div>
-          
-          </div>
-          </div>
-          </div>
-
+    <div tabindex="-1" id="notebook" class="border-box-sizing">
+    <div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="How-I-made-this-site">How I made this site<a class="anchor-link" href="#How-I-made-this-site">&#182;</a></h1><h4 id="Basically-with-Jupyter-notebooks-custom-templates">Basically with Jupyter notebooks custom templates<a class="anchor-link" href="#Basically-with-Jupyter-notebooks-custom-templates">&#182;</a></h4>
+</div>
+</div>
+</div>
+</div> </br> </br> <div class="container" id="notebook-container">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Systems-Biology-Lecture-1">Systems Biology Lecture 1<a class="anchor-link" href="#Systems-Biology-Lecture-1">&#182;</a></h1><h4 id="Lecture-1-on-an-MIT-OpenCourseWare-course-on-systems-biology---will-update-as-I-go-along">Lecture 1 on an MIT OpenCourseWare course on systems biology - will update as I go along<a class="anchor-link" href="#Lecture-1-on-an-MIT-OpenCourseWare-course-on-systems-biology---will-update-as-I-go-along">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Coalgebra-2">Coalgebra 2<a class="anchor-link" href="#Coalgebra-2">&#182;</a></h1><h4 id="More-coalgebra">More coalgebra<a class="anchor-link" href="#More-coalgebra">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Coalgebra-1">Coalgebra 1<a class="anchor-link" href="#Coalgebra-1">&#182;</a></h1><h4 id="An-intro-to-coalgebra,-and-a-bit-of-an-introduction-into-a-paper-on-universal-measuring-coalgebra">An intro to coalgebra, and a bit of an introduction into a paper on universal measuring coalgebra<a class="anchor-link" href="#An-intro-to-coalgebra,-and-a-bit-of-an-introduction-into-a-paper-on-universal-measuring-coalgebra">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="The-Secret-Santa-Problem">The Secret Santa Problem<a class="anchor-link" href="#The-Secret-Santa-Problem">&#182;</a></h1><h4 id="A-small-generalisation-of-the-Bernoulli-letter-problem-that-I-was-asked-about-in-the-office">A small generalisation of the Bernoulli letter problem that I was asked about in the office<a class="anchor-link" href="#A-small-generalisation-of-the-Bernoulli-letter-problem-that-I-was-asked-about-in-the-office">&#182;</a></h4>
+</div>
+</div>
+</div>
+    </div>
+  </div>
     </div>
 </div>
 <div class="panel-right"></div>
 </div>
 </body>
-</html> 
+
+ 
+
+
+</html>
