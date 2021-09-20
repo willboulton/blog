@@ -1,7 +1,4 @@
 /* My CSS */
-/*html {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', Verdana, sans-serif;
-}*/
 
 body {
     background-image: url('../img/wm-processed1.jpg');
@@ -11,7 +8,6 @@ body {
     border: 0px;
     height: 100%;
 }
-
 
 /* --- Header --- */
 
@@ -37,6 +33,7 @@ body {
     flex-wrap: wrap;
     height: fit-content;
     bottom: 0px;
+    /*filter: url(#monochrome);*/
 }
 
 .panel-left {
@@ -131,36 +128,6 @@ body {
     color: black;
   }
 }
-
-
-/*
-
-.topnav {
-    background-color: #efefef;
-    overflow: hidden;
-    font-size: 16;
-    text-align: center;
-}
-
-/* Style the links inside the navigation bar *//*
-.topnav a {
-  float: left;
-  color: black;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-.topnav a:hover {
-  text-decoration: underline;;
-}
-
-/* Add a underline to the currently active link *//*
-.topnav a.active {
-  text-underline-position: below;
-}
-*/
 
 .content {
   border:10px;

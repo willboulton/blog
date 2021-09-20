@@ -1,0 +1,8 @@
+# for genomics project
+
+matplotlib
+pandas
+numpy
+sklearn
+hmmlearn
+bitstring

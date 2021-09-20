@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8" />
+<link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
+<link rel="manifest" href="/img/site.webmanifest">
+<title>Stuff I Just Found Out</title>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+
+
+
+<!-- Custom stylesheet, it must be in the same directory as the html file -->
+<link rel="stylesheet" href="/css/notebook_preset.css">
+<link rel="stylesheet" href="/css/custom.css">
+
+<!-- Loading mathjax macro -->
+<!-- Load mathjax -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML-full,Safe"> </script>
+    <!-- MathJax configuration -->
+    <script type="text/x-mathjax-config">
+    init_mathjax = function() {
+        if (window.MathJax) {
+        // MathJax loaded
+            MathJax.Hub.Config({
+                TeX: {
+                    equationNumbers: {
+                    autoNumber: "AMS",
+                    useLabelIds: true
+                    }
+                },
+                tex2jax: {
+                    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+                    processEscapes: true,
+                    processEnvironments: true
+                },
+                displayAlign: 'center',
+                CommonHTML: {
+                    linebreaks: { 
+                    automatic: true 
+                    }
+                },
+                "HTML-CSS": {
+                    linebreaks: { 
+                    automatic: true 
+                    }
+                }
+            });
+        
+            MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+        }
+    }
+    init_mathjax();
+    </script>
+    <!-- End of mathjax configuration --></head>
+<body>
+<div class="panel-background">
+<div class="panel-left"></div>
+<div class="panel-main">
+
+    <div class="header">
+        <h1 id="title">Stuff I Just Found Out</h1>
+        <p id="subtitle">A science blog with all the maths put back in.</p>
+    </div> 
+    <!-- Top navigation -->
+    <div class="topnav">
+
+        <!-- Centered link -->
+        <div class="topnav-centered"><div>
+        <a href="./index.html">Home</a>
+        <a href="./about.html">About</a>
+        <a href="./topics.html">Topics</a>
+        <a href="./bookmarks.html">Bookmarks</a></div>
+        </div>
+    
+    
+        <!-- Right-aligned links -->
+        <div class="topnav-right">
+        <a href=""></a>
+        </div>
+    
+    </div> 
+    
+    <div class="content">
+    <div tabindex="-1" id="notebook" class="border-box-sizing">
+    <div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Systems-Biology-Lecture-0">Systems Biology Lecture 0<a class="anchor-link" href="#Systems-Biology-Lecture-0">&#182;</a></h1><p>This is a set of lecture notes from a 2014 course on systems biology from MIT, lectured by Prof. Jeff Gore. You can find it <a href="https://ocw.mit.edu/courses/physics/8-591j-systems-biology-fall-2014/">here</a>.</p>
+<p>The first lecture is a bit of an overview of the course.</p>
+<p>I am just going to go over the highlights in these notes, and I would recommend anyone who is really interested to look at the course on the link above, or search for it on Youtube.</p>
+<h2 id="What-is-systems-biology?">What is systems biology?<a class="anchor-link" href="#What-is-systems-biology?">&#182;</a></h2><p>One thing Jeff gets really excited by right at the start of the lecture is a <a href="https://youtu.be/gc3O2sKIsX4?list=PLUl4u3cNGP63OI3pSKo8Ha_DFBMxm23xO&amp;t=83">video of a neutrophil chasing around a bacterium</a> in some blood. This is really amazing! How can a single cell make these complex decisions and chase another cell? This is the sort of behaviour that systems biology aims to understand.</p>
+<p>Systems biology uses simple models from nonlinear dynamics and physics to model simple cells, genes, and cell-interactions.</p>
+<h3 id="Course-description">Course description<a class="anchor-link" href="#Course-description">&#182;</a></h3><blockquote><p>"Introduction to cellular and population-level systems biology with an emphasis on synthetic biology, modelling of genetic networks, cell-cell interactions, and evolutionary dynamics. Cellular systems include genetic switches and oscillators, network motifs, genetic network evolution, and celular decision-making. Population-level systems include models of pattern formation, cell-cell communication, and evolutionary systems biology." - Prof. Jeff Gore</p>
+</blockquote>
+<h3 id="A-reading-list-from-the-course">A reading list from the course<a class="anchor-link" href="#A-reading-list-from-the-course">&#182;</a></h3><ul>
+<li>An introduction to Systems Biology, Uri Alon</li>
+<li>Evolutionary Dynamics, Martin Nowak</li>
+<li>Essential Cell Biology, Bruce Alberts et al.</li>
+<li>Nonlinear Dynamics and Chaos, Strogatz</li>
+</ul>
+<h3 id="Some-prerequisites">Some prerequisites<a class="anchor-link" href="#Some-prerequisites">&#182;</a></h3><ul>
+<li>A bit of differential equations</li>
+<li>Some simple probability</li>
+<li>Understanding of some basic concepts from biology (<a href="https://ocw.mit.edu/courses/biology/7-01sc-fundamentals-of-biology-fall-2011/index.htm">try Eric Lander's MIT course</a>!</li>
+<li>The course uses Python in the computational problems, which is also what I'm using. </li>
+</ul>
+<h3 id="Overview-of-Course">Overview of Course<a class="anchor-link" href="#Overview-of-Course">&#182;</a></h3><ol>
+<li>Gene networks and cellular decision making</li>
+<li>Evolutionary systems biology</li>
+<li>Ecological systems biology</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="A-gentle-introduction-to-Gene-Regulation">A gentle introduction to Gene Regulation<a class="anchor-link" href="#A-gentle-introduction-to-Gene-Regulation">&#182;</a></h2><ul>
+<li><p>$ X \rightarrow Y$ means (gene) X activates (gene) Y</p>
+</li>
+<li><p>$X \dashv Y$ means X represses Y</p>
+</li>
+</ul>
+<h3 id="Examples:">Examples:<a class="anchor-link" href="#Examples:">&#182;</a></h3><p>A. $\text{aTc} \dashv \text{TetR} \dashv \text{gfp}$</p>
+<ul>
+<li>gfp is green flourescant protein - it is very important for experiments! IDK what the other things stand for. </li>
+</ul>
+<p>Qn. What is the characteristic timescale for these sort of activations/ repressions to occur?</p>
+<p>Ans. Of order on the cell generation time, i.e. timescale of the cell cycle. (Which varys depending on the type of cell but is roughly an hour for a bacterium.)</p>
+<p>B. Negative autoregulation $\text{aTc} \dashv \text{TetR-gfp} \dashv \text{TetR-gfp}$</p>
+<p>TetR-gfp is a <em>fusion protein</em>.</p>
+<p>Autoregulation can decreate response time.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>From two genes repressing one another, you can make a toggle switch! This is probably the smallest component of computer memory, it is something a little bit like a <a href="https://www.doc.ic.ac.uk/~eedwards/compsys/memory/latches.html">latch</a> or something.</p>
+<p>With three genes repressing one another in a circular fashion, you get oscillations as the states mutually repress one another. Something like:</p>
+<ul>
+<li>$\text{gfp} \dashv \text{bfp} \dashv \text{rfp} \dashv \text{gfp}$</li>
+</ul>
+<p>This is called a repressilator! It is very cool. But if you do this with colonies of e-coli, they get out of phase with one another. Elowitz came up with this - and through this found about the importance of noise in the decision making of cells. (The three proteins are differently coloured but otherwise basically the same.)</p>
+<p>Ulon and Barabasi looked for motifs within gene regulatory networks, and found a lot of interesting ones. We will look at the feed-forward loop motif:</p>
+$$ A \rightarrow B \rightarrow C \text{ and } A \rightarrow C$$<p>A conclusion to all of these things: <strong>Life is noisy</strong>. You can do the same experiment twice and get very different answers just due to noise in molecular scale gene expression.</p>
+<p>Another conclusion: <strong>Life is different if you are small</strong>. A case in point, Reynold's number changes a lot with scale (at bacterial scale, $\mathcal{Re} = 10^{-4}$ and water is sticky like treacle).</p>
+<h2 id="Turing-Patterns-and-bigger-things">Turing Patterns and bigger things<a class="anchor-link" href="#Turing-Patterns-and-bigger-things">&#182;</a></h2><p>We will look at these in the course; we are also going to look at systems biology in ecology (we'll look at more papers by Uri Alon, including a paper on the evolution of optimal expression level).</p>
+<ul>
+<li>### Stochasticity in systems biology</li>
+</ul>
+<p>Qn. Why do we need to consider stochasticity in populations of approx. $10^9$ individuals? Should this not just wash out (like in thermodynamics)?</p>
+<p>Ans. Every mutant starts out as a single individual. This means that there is always a time where populations are subject to stochastic fluctuations, which can be very important.</p>
+<ul>
+<li><p>### Fitness Landscapes
+This is another important concept - with enough individuals, there may be a path that evolution takes, to improve its fitness in the huge landscape of all possible genomes. 
+There may also be <em>game interactions</em>, i.e. concepts from game theory are important. And there can be examples in populations of 'psychopathic' individuals.</p>
+</li>
+<li><p>### <a href="https://en.wikipedia.org/wiki/Red_Queen_hypothesis">Red Queen Hypothesis</a></p>
+</li>
+</ul>
+<blockquote><p>"The Red Queen has to run faster and faster to remain exactly where she is!" - Lewis Carroll</p>
+</blockquote>
+<ul>
+<li><p>### Predator Prey Dynamics</p>
+</li>
+<li><p>### Dynamics of Populations in Space
+Will look at concepts like genetic drift.</p>
+</li>
+<li><p>### Tipping points in populations
+Population collapse - in particular Jeff looks at tipping points in fisheries.</p>
+</li>
+<li><p>Neutral Theory of Ecology
+Patterns in real life can be explained by a null model (sometimes), and not because any particular species is more fit than the others!</p>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+    </div>
+    </div>
+    </div>
+</div>
+<div class="panel-right"></div>
+</div>
+</body>
+
+ 
+
+
+</html>

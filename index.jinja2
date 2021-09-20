@@ -1,5 +1,5 @@
-{%- extends 'basic.tpl' -%}
-{% from 'mathjax.tpl' import mathjax %}
+{%- extends 'classic/base.html.j2' -%}
+{% from 'base/mathjax.html.j2' import mathjax %}
 
 
 {%- block header -%}
@@ -8,10 +8,10 @@
 <head>
 {%- block html_head -%}
 <meta charset="utf-8" />
-<link rel="apple-touch-icon" sizes="180x180" href="../img/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16x16.png">
-<link rel="manifest" href="../img/site.webmanifest">
+<link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
+<link rel="manifest" href="/img/site.webmanifest">
 <title>Stuff I Just Found Out</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
@@ -49,8 +49,8 @@
 
 
 <!-- Custom stylesheet, it must be in the same directory as the html file -->
-<link rel="stylesheet" href="../css/notebook_preset.css">
-<link rel="stylesheet" href="../css/custom.css">
+<link rel="stylesheet" href="/css/notebook_preset.css">
+<link rel="stylesheet" href="/css/custom.css">
 
 <!-- Loading mathjax macro -->
 {{ mathjax() }}
@@ -66,7 +66,7 @@
 
     <div class="header">
         <h1 id="title">Stuff I Just Found Out</h1>
-        <p id="subtitle">A science blog with all of the difficult maths put back in.</p>
+        <p id="subtitle">A science blog with all the maths put back in.</p>
     </div> 
     <!-- Top navigation -->
     <div class="topnav">

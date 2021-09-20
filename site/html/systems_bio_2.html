@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8" />
+<link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
+<link rel="manifest" href="/img/site.webmanifest">
+<title>Stuff I Just Found Out</title>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+
+
+
+<!-- Custom stylesheet, it must be in the same directory as the html file -->
+<link rel="stylesheet" href="/css/notebook_preset.css">
+<link rel="stylesheet" href="/css/custom.css">
+
+<!-- Loading mathjax macro -->
+<!-- Load mathjax -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML-full,Safe"> </script>
+    <!-- MathJax configuration -->
+    <script type="text/x-mathjax-config">
+    init_mathjax = function() {
+        if (window.MathJax) {
+        // MathJax loaded
+            MathJax.Hub.Config({
+                TeX: {
+                    equationNumbers: {
+                    autoNumber: "AMS",
+                    useLabelIds: true
+                    }
+                },
+                tex2jax: {
+                    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+                    processEscapes: true,
+                    processEnvironments: true
+                },
+                displayAlign: 'center',
+                CommonHTML: {
+                    linebreaks: { 
+                    automatic: true 
+                    }
+                },
+                "HTML-CSS": {
+                    linebreaks: { 
+                    automatic: true 
+                    }
+                }
+            });
+        
+            MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+        }
+    }
+    init_mathjax();
+    </script>
+    <!-- End of mathjax configuration --></head>
+<body>
+<div class="panel-background">
+<div class="panel-left"></div>
+<div class="panel-main">
+
+    <div class="header">
+        <h1 id="title">Stuff I Just Found Out</h1>
+        <p id="subtitle">A science blog with all the maths put back in.</p>
+    </div> 
+    <!-- Top navigation -->
+    <div class="topnav">
+
+        <!-- Centered link -->
+        <div class="topnav-centered"><div>
+        <a href="./index.html">Home</a>
+        <a href="./about.html">About</a>
+        <a href="./topics.html">Topics</a>
+        <a href="./bookmarks.html">Bookmarks</a></div>
+        </div>
+    
+    
+        <!-- Right-aligned links -->
+        <div class="topnav-right">
+        <a href=""></a>
+        </div>
+    
+    </div> 
+    
+    <div class="content">
+    <div tabindex="-1" id="notebook" class="border-box-sizing">
+    <div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Systems-Biology-Lecture-2">Systems Biology Lecture 2<a class="anchor-link" href="#Systems-Biology-Lecture-2">&#182;</a></h1><h2 id="Autoregulation,-Feedback-and-Bistability">Autoregulation, Feedback and Bistability<a class="anchor-link" href="#Autoregulation,-Feedback-and-Bistability">&#182;</a></h2><ul>
+<li>What happens when a gene regulates its own expression?</li>
+<li>What are network motifs?</li>
+<li>Why might these network motifs evolve?</li>
+</ul>
+<h3 id="Autoregulation">Autoregulation<a class="anchor-link" href="#Autoregulation">&#182;</a></h3><p>Two kinds:</p>
+<ul>
+<li>positive</li>
+<li>negative</li>
+</ul>
+<p>They do very different things!</p>
+<p>Negative autoregulation speeds up the "on time" and makes the protein concentration more robust to changes in the production rate. Positive autoregulation allows for the possibility of bistability and 'memory'.</p>
+<p><strong>Problem</strong>: we want $X \rightarrow Y$ to happen with an almost digital response. One solution is cooperativity. Another solution is molecular titration.</p>
+<p>Recall our model from last time:</p>
+$$XW \leftrightharpoons X + W, X \rightarrow Y$$<p>with constants $K_W$, $K_d$. $K_d$ represents the affinity of the transcription factor $X^*$ to the promoter of $Y$, $K_W$ is for the $XW$ complex. These both have units of concentration.</p>
+<h4 id="Questions">Questions<a class="anchor-link" href="#Questions">&#182;</a></h4><p>Under what conditions do we get an ultrasensitive response, where the rate of production of $Y$ is faster than linear w.r.t. $X$?</p>
+<ol>
+<li>$K_d$ vs $K_W$</li>
+</ol>
+<p>$K_d \gg K_W$ will mean that $X$ binds to $W$ preferentially before being expressed, and so $Y$ will only be expressed once $X$ is expressed in a threshold above $W_T$ (the total amount of $W$). So we will get a form of ultrasensitivity whereby $Y$ is only activated after a certain threshold, at which point it is produced in reasonable amounts.</p>
+<ol>
+<li>$K_W$ vs $W_T$</li>
+</ol>
+<p>$K_W \ll W_T$ will produce an ultrasensitive response because 
+In general, for $X_T &lt; W_T$,</p>
+$$X \approx \frac{X_TK_W}{W_T}$$<p>.</p>
+<p>Plotting free $X$ vs $X_T$ on a log-log scale, we get a straight line with gradient 1 in the regime above $W_T$, and the same below $W_T$, but with an almost vertical section near $W_T$.</p>
+<p><strong>PLOT THESE!</strong></p>
+<ol>
+<li>$K_d$ vs $W_T$</li>
+</ol>
+<p>$K_d \lessapprox W_T$ -</p>
+<h3 id="Network-Motifs">Network Motifs<a class="anchor-link" href="#Network-Motifs">&#182;</a></h3><p>Now we are going to switch tack a little bit. We will look at transcriptional networks, in the context of networks more generally.</p>
+<p>Given a network with $N$ nodes and $E$ edges (Uri Alon gives an example with 420 nodes and 520 edges), we have $N^2$ many possible directed edges. Let's assign $E$ edges randomly out of the possibilities - this is called an Erdos-Renyi network and will be our null model for a network. (Is this a good null model?! Possibly not...)</p>
+<p>Let $p = \frac{E}{N^2}$ be the probability for each edge that it is 'chosen' in our null network. $\langle N_{\text{self}} \rangle = Np = E/N$ (angled brackets mean expectation, just like in quantum mechanics).</p>
+<p>In Uri's paper, $\langle N_{\text{self}} \rangle$ is on the order of 1.1. However, in his observered transcriptional network, he found about 40 self-directed edges. His observation (with a stats test) is that $42 \gg 1.1$. Of these, 34 were negative autoregulation, and 6 were positive autoregulation. Uri then asks what possible evolutionary advantages such a network motif might have.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Questions-about-negative-autoregulation">Questions about negative autoregulation<a class="anchor-link" href="#Questions-about-negative-autoregulation">&#182;</a></h4><ol>
+<li>How does negative autoregulation ($X \dashv X$) change the response time?
+It decreases the response time for turning a gene on, but turning a gene off still happens at the 'normal' rate, i.e. at the usual $\alpha$ rate corresponding to degregation and cell generation rate. Note that changing $\alpha$ is possible, and does increase sensitivity, but at a significant cost to the cell in that you have to increase the degregation rate somehow - so are expressing and degrading the transcription factor at the same time, which is costly and wasteful. </li>
+</ol>
+<p><strong>Plot a graph!</strong></p>
+<ol>
+<li>How is $X_{\text{equilibrium}}$ robust to small changes in parameters?
+It is robust to small changes in $\alpha$ and $\beta$; small changes in $\alpha$ will basically have no effect on the equilibrium concentration of $X$, and the production rate of the protein $\beta$ also has no effect on the equilibrium value of $X$. </li>
+</ol>
+<p><strong>Plot another graph!</strong></p>
+<p>Uri makes the argument that these two things are why negative autoregulation are so strongly selected for in nature.</p>
+<h4 id="Positive-autoregulation-$(X-\rightarrow-X)$-and-bistability">Positive autoregulation $(X \rightarrow X)$ and bistability<a class="anchor-link" href="#Positive-autoregulation-$(X-\rightarrow-X)$-and-bistability">&#182;</a></h4>$$\dot{X} = \beta_0 + \beta_1 \frac{X^n}{K^n + X^n} - \alpha X$$<p><strong>plot another graph!</strong></p>
+<p>Question: how many fixed points will this function have? You can see from the graph, this will have 3 fixed points - 2 are stable and 1 is unstable. We can draw little arrows on our axes which show which way $X$ is pushed in which regime. These two fixed points are why we call this <em>bistability</em>. By changing $\alpha$ in our equation, we can get a bifurcation, and the number of fixed points is reduced.</p>
+<p><strong>Plot another graph! - fold bifurcation</strong></p>
+<p>This kind of system displays a primitive kind of memory - if you had seen a high or low degredation in the past then that might tell you what you've seen before. This kind of memory can also be reset, perhaps stochastically.</p>
+<h4 id="Summary">Summary<a class="anchor-link" href="#Summary">&#182;</a></h4><p>We've looked at possible explanations of why autoregulation is observed as frequently as it is.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    </div>
+    </div>
+    </div>
+</div>
+<div class="panel-right"></div>
+</div>
+</body>
+
+ 
+
+
+</html>
