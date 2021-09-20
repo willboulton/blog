@@ -8,6 +8,6 @@ if __name__ == "__main__":
     posts = glob.glob("./posts/active/*.ipynb")
     for p in posts:
         if p.endswith("index.ipynb"):
-            build(p, "./site/html", "index.jinja2")
+            build(p, "./site", "index.jinja2")
         else:
             build(p, "./site/html", "template.jinja2")
